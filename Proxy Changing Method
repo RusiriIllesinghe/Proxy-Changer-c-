@@ -1,0 +1,14 @@
+using System.IO;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
+
+private void proxy(string proxy)
+        {
+            RegistryKey registry = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", true);
+            registry.SetValue("ProxyEnable", 1);
+            registry.SetValue("ProxyServer", proxy);
+        }
+        
+        
+      // You can pass the string pramater(proxy) to this method and instant yor system is changing the proxy you want
